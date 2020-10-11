@@ -63,11 +63,17 @@ var num = process.argv[2];
 target = "pbf/" + num + "/";
 
 //テスト用範囲
-var rangecontent = fs.readFileSync("./list/range.json").toString();
-var rangelist = JSON.parse(rangecontent);
+//リストから範囲を取り出す場合
+//var rangecontent = fs.readFileSync("./list/range.json").toString();
+//var rangelist = JSON.parse(rangecontent);
+//var range = cls.rangelist[name];
 
+//もし、規則的に範囲を計算できる場合
+var cls = require('./createList.js');
 var name = num + "";
-var range = rangelist[name];
+var range = cls.bboxRange(name);
+
+
 if(range){
    var maxlng = Math.max(range[0], range[2]) - 0.00001;
    var minlng = Math.min(range[0], range[2]) + 0.00001;
