@@ -1,6 +1,6 @@
 var child_process = require('child_process');
 var fs = require('fs');
- 
+
 //Reference: Slippy map tilenames
 //https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames
 tile2long = (x,z) => {
